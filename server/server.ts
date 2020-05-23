@@ -1,4 +1,5 @@
-import {Application, Router} from "https://deno.land/x/oak/mod.ts";
+import Application from "https://deno.land/x/oak/mod.ts";
+import routes from 'routes';
 
 const port = 5000;
 
@@ -9,11 +10,6 @@ const router = new Router();
 app.use(router.routes());
 app.use(router.allowedMethods())
 
-router.get('/api/v1/products', ({response}:{response:any}) =>{
-
-	response.body = 'Hello World';
-
-});
 
 console.log(`Server running in port ${port}`);
 
